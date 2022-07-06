@@ -1,0 +1,8 @@
+#!/bin/bash
+
+gcc -O3 -fpic -c fftlog_PT.c -lm -lgsl -lgslcblas -lfftw3
+gcc -O3 -fpic -c biasing.c -lm -lgsl -lgslcblas -lfftw3 -fopenmp
+gcc -O3 -fpic -c halofit.c -lm -lgsl -lgslcblas -lfftw3
+gcc -O3 -fpic -c TNSCorrections.c -lm -lgsl -lgslcblas -fopenmp
+gcc -O3 -fpic -c RealPower.c -lm -lgsl -lgslcblas -lfftw3
+gcc -O3 fftlog_PT.o biasing.o halofit.o TNSCorrections.o RealPower.o -o RealPower -lm -lgsl -lgslcblas -lfftw3 -fopenmp

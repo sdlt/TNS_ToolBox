@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gcc -O3 -fpic -c fftwlog.c -lm -lgsl -lgslcblas -lfftw3 -fopenmp
+gcc -O3 -fpic -c TNS.c -lm -lgsl -lgslcblas -lfftw3 -fopenmp
+gcc -O3 fftwlog.o TNS.o -o TNS -lm -lgsl -lgslcblas -lfftw3 -fopenmp
