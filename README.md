@@ -1,8 +1,6 @@
 # TNS_ToolBox
 
- ========================================
- AUTHOR: Sylvain de la Torre         2022        
- ========================================
+AUTHOR: Sylvain de la Torre, 2022        
 
 This C code implements the TNS model (Taruya, Nishimishi & Saito 2010) with
 renormalised 1-loop bias model as used in Bautista, Paviot et al. 2020. It
