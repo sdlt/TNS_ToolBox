@@ -312,7 +312,7 @@ int main(int argc, char *argv[])
   //-- Command-line options
   
   int mode = 0;
-  size_t optind;
+  int optind;
   double hp[5];
 
   if (argc<=3) {
@@ -326,9 +326,10 @@ int main(int argc, char *argv[])
 
       if (strcmp(argv[optind+1], "HaloBel") == 0) 
 	{
-	  double Omega_m, Omega_v, fnu, Omega0_m, w0;
+	  // Halofit parameters: Omega_m, Omega_v, fnu, Omega0_m, w0;
+	  
 	  if (optind+6>argc) {
-	    fprintf(stderr, "Missing Halofit parameters\n", argv[0]);
+	    fprintf(stderr, "Missing Halofit parameters\n");
 	    exit(1);
 	  }
 	  sscanf(argv[optind+2], "%lf", &hp[0]);
@@ -351,7 +352,7 @@ int main(int argc, char *argv[])
 	}
       else
 	{
-	  fprintf(stderr, "Unknown option\n", argv[0]);
+	  fprintf(stderr, "Unknown option\n");
 	  exit(1);
 	}
       

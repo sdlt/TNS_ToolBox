@@ -435,7 +435,7 @@ void comp_TNScorr(double sig8)
   int i,nl;
   FILE *fic;
   char file[500];
-  double dlk,lk,x[NK];
+  double dlk,x[NK];
   double ca11[NK],ca12[NK],ca22[NK],ca23[NK],ca33[NK];
   double cb111[NK],cb112[NK],cb121[NK],cb122[NK],cb211[NK],cb212[NK],cb221[NK],cb222[NK],cb312[NK],cb321[NK],cb322[NK],cb422[NK];
   double lkmin=log10(KMIN);
@@ -480,8 +480,10 @@ void comp_TNScorr(double sig8)
       ca33[i]=corrA(k,3,3)*norm*norm;
       
       per=100*(double)(i+1)/NK;
-      #pragma atomic
-      if (per>permax) permax=per;
+      if (per>permax) {
+	#pragma omp atomic read
+	permax=per;
+      }
       fprintf(stderr,"- A->%.1lf %% done \r",permax);
     }
     
@@ -538,8 +540,10 @@ void comp_TNScorr(double sig8)
       cb422[i]=corrB(k,4,2,2)*norm*norm;
 
       per=100*(double)(i+1)/NK;
-      #pragma atomic
-      if (per>permax) permax=per;
+      if (per>permax) {
+	#pragma omp atomic read
+	permax=per;
+      }
       fprintf(stderr,"- B->%.1lf %% done \r",permax);
     }
 

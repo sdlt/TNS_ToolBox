@@ -1,5 +1,0 @@
-#!/bin/bash
-
-gcc -O3 -fpic -c fftwlog.c -lm -lgsl -lgslcblas -lfftw3 #-fopenmp
-gcc -O3 -fpic -c TNS.c -lm -lgsl -lgslcblas -lfftw3 #-fopenmp
-gcc -O3 -shared fftwlog.o TNS.o -o libTNS.so -lm -lgsl -lgslcblas -lfftw3 #-fopenmp

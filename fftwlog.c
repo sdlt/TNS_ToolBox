@@ -61,9 +61,9 @@ int fftwlog_get_array_index (NcmFftlog *fftlog, int phys_i)
 void fftwlog_set_best_lnr0 (NcmFftlog *fftlog)
 {
   double lnk0 = fftwlog_get_lnk0 (fftlog);
-  double Lk   = fftwlog_get_length (fftlog);
-  double ell  = fftwlog_get_ell (fftlog);
-  double lnc0 = (fabs(ell)<=1e-12) ? 0.0 : ((ell - 1.0) * Lk + 2.0 * (ell + 1.0) * M_LN2 - log(M_PI) + 2.0 * gsl_sf_lngamma (1.5 + ell)) / (2.0 * (1.0 + ell));
+  //double Lk   = fftwlog_get_length (fftlog);
+  //double ell  = fftwlog_get_ell (fftlog);
+  //double lnc0 = (fabs(ell)<=1e-12) ? 0.0 : ((ell - 1.0) * Lk + 2.0 * (ell + 1.0) * M_LN2 - log(M_PI) + 2.0 * gsl_sf_lngamma (1.5 + ell)) / (2.0 * (1.0 + ell));
   
   fftlog->lnr0 = -lnk0; //+lnc0;
 }
@@ -71,9 +71,9 @@ void fftwlog_set_best_lnr0 (NcmFftlog *fftlog)
 void fftwlog_set_best_lnk0 (NcmFftlog *fftlog)
 {
   double lnr0 = fftwlog_get_lnr0 (fftlog);
-  double Lk   = fftwlog_get_length (fftlog);
-  double ell  = fftwlog_get_ell (fftlog);
-  double lnc0 = (fabs(ell)<=1e-12) ? 0.0 : ((ell - 1.0) * Lk + 2.0 * (ell + 1.0) * M_LN2 - log(M_PI) + 2.0 * gsl_sf_lngamma (1.5 + ell)) / (2.0 * (1.0 + ell));
+  //double Lk   = fftwlog_get_length (fftlog);
+  //double ell  = fftwlog_get_ell (fftlog);
+  //double lnc0 = (fabs(ell)<=1e-12) ? 0.0 : ((ell - 1.0) * Lk + 2.0 * (ell + 1.0) * M_LN2 - log(M_PI) + 2.0 * gsl_sf_lngamma (1.5 + ell)) / (2.0 * (1.0 + ell));
   
   fftlog->lnk0 = -lnr0; //+lnc0;
 }
@@ -261,7 +261,7 @@ void fftwlog_get_Ym(NcmFftlog *fftlog, fftw_complex *Ym_0)
 
 void fftwlog_eval_by_gsl_function (NcmFftlog *fftlog, gsl_function *Fk)
 {
-  int i,dump;
+  int i;
 
   #pragma omp parallel for 
   for (i=0; i<fftlog->N; i++)

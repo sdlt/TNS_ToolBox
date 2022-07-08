@@ -105,8 +105,9 @@ double P_TNS(double mu, void *params)
 
 double getPkl(double k, void *params)
 {
-  double res, err;
-  size_t ne;
+  double res;
+  //double err;
+  //size_t ne;
   gsl_function F;
   double par[10];
   gsl_integration_glfixed_table *t=gsl_integration_glfixed_table_alloc(6);
@@ -140,7 +141,7 @@ double getPklfast(double k, void *params)
     int i,nint;
     double res;
     double par[10];
-    double dmu,mu;
+    double dmu;
 
     par[0]=k;
     par[1]=((double *)params)[0];

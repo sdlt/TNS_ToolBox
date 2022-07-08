@@ -355,14 +355,14 @@ void free_bias(void)
 int comp_bias(int NFFT, double *k, int nk,
 	      double *p1,  double *p2, double *p3, double *p4, double *p5, double *p6, double *p7, double *p8, double *p9)
 {
-  int i,j;
+  int i;
   double pkt[9][NFFT];
   
   init_bias(NFFT);
 
   #pragma omp parallel for
   for(i=0;i<fcpt->N;i++) {
-    #pragma atomic
+    #pragma omp atomic write
     pkt[0][i]=Pk_fastT(kkk[i],&M_A);
     pkt[1][i]=Pk_fastT(kkk[i],&M_At);
     pkt[2][i]=Pk_fastT(kkk[i],&M_B);
