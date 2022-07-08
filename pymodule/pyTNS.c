@@ -571,50 +571,39 @@ static void (*_cffi_call_python_org)(struct _cffi_externpy_s *, char *);
 /************************************************************/
 
 static void *_cffi_types[] = {
-/*  0 */ _CFFI_OP(_CFFI_OP_FUNCTION, 15), // double *()(double, double, int, double, double, double, double, double, double)
+/*  0 */ _CFFI_OP(_CFFI_OP_FUNCTION, 3), // int()(double, double, int, double *, double, double, double, double, double, double)
 /*  1 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14), // double
 /*  2 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
 /*  3 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7), // int
-/*  4 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
+/*  4 */ _CFFI_OP(_CFFI_OP_POINTER, 1), // double *
 /*  5 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
 /*  6 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
 /*  7 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
 /*  8 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
 /*  9 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
-/* 10 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 11 */ _CFFI_OP(_CFFI_OP_FUNCTION, 3), // int()(double, double, int, double *, double, double, double, double, double, double)
-/* 12 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
+/* 10 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
+/* 11 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 12 */ _CFFI_OP(_CFFI_OP_FUNCTION, 3), // int()(double, double, int, double *, double, double, double, double, double, double, double, double)
 /* 13 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
-/* 14 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 15 */ _CFFI_OP(_CFFI_OP_POINTER, 1), // double *
-/* 16 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
+/* 14 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
+/* 15 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 16 */ _CFFI_OP(_CFFI_OP_NOOP, 4),
 /* 17 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
 /* 18 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
 /* 19 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
 /* 20 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
 /* 21 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
-/* 22 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 23 */ _CFFI_OP(_CFFI_OP_FUNCTION, 3), // int()(double, double, int, double *, double, double, double, double, double, double, double, double)
+/* 22 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
+/* 23 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
 /* 24 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
-/* 25 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
-/* 26 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 27 */ _CFFI_OP(_CFFI_OP_NOOP, 15),
-/* 28 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
-/* 29 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
-/* 30 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
-/* 31 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
-/* 32 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
-/* 33 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
-/* 34 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
-/* 35 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14),
-/* 36 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 37 */ _CFFI_OP(_CFFI_OP_FUNCTION, 43), // void()(char *)
-/* 38 */ _CFFI_OP(_CFFI_OP_POINTER, 42), // char *
-/* 39 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 40 */ _CFFI_OP(_CFFI_OP_FUNCTION, 43), // void()(void)
-/* 41 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 42 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 2), // char
-/* 43 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 0), // void
+/* 25 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 26 */ _CFFI_OP(_CFFI_OP_FUNCTION, 32), // void()(char *)
+/* 27 */ _CFFI_OP(_CFFI_OP_POINTER, 31), // char *
+/* 28 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 29 */ _CFFI_OP(_CFFI_OP_FUNCTION, 32), // void()(void)
+/* 30 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 31 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 2), // char
+/* 32 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 0), // void
 };
 
 static void _cffi_d_free_prediction(void)
@@ -694,10 +683,10 @@ _cffi_f_get_prediction(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(15), arg3, (char **)&x3);
+      _cffi_type(4), arg3, (char **)&x3);
   if (datasize != 0) {
     x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(15), arg3, (char **)&x3,
+    if (_cffi_convert_array_argument(_cffi_type(4), arg3, (char **)&x3,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -798,10 +787,10 @@ _cffi_f_get_prediction_LL(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(15), arg3, (char **)&x3);
+      _cffi_type(4), arg3, (char **)&x3);
   if (datasize != 0) {
     x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(15), arg3, (char **)&x3,
+    if (_cffi_convert_array_argument(_cffi_type(4), arg3, (char **)&x3,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -845,88 +834,6 @@ _cffi_f_get_prediction_LL(PyObject *self, PyObject *args)
 #  define _cffi_f_get_prediction_LL _cffi_d_get_prediction_LL
 #endif
 
-static double * _cffi_d_get_xil_LL(double x0, double x1, int x2, double x3, double x4, double x5, double x6, double x7, double x8)
-{
-  return get_xil_LL(x0, x1, x2, x3, x4, x5, x6, x7, x8);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_get_xil_LL(PyObject *self, PyObject *args)
-{
-  double x0;
-  double x1;
-  int x2;
-  double x3;
-  double x4;
-  double x5;
-  double x6;
-  double x7;
-  double x8;
-  double * result;
-  PyObject *pyresult;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-  PyObject *arg3;
-  PyObject *arg4;
-  PyObject *arg5;
-  PyObject *arg6;
-  PyObject *arg7;
-  PyObject *arg8;
-
-  if (!PyArg_UnpackTuple(args, "get_xil_LL", 9, 9, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5, &arg6, &arg7, &arg8))
-    return NULL;
-
-  x0 = (double)_cffi_to_c_double(arg0);
-  if (x0 == (double)-1 && PyErr_Occurred())
-    return NULL;
-
-  x1 = (double)_cffi_to_c_double(arg1);
-  if (x1 == (double)-1 && PyErr_Occurred())
-    return NULL;
-
-  x2 = _cffi_to_c_int(arg2, int);
-  if (x2 == (int)-1 && PyErr_Occurred())
-    return NULL;
-
-  x3 = (double)_cffi_to_c_double(arg3);
-  if (x3 == (double)-1 && PyErr_Occurred())
-    return NULL;
-
-  x4 = (double)_cffi_to_c_double(arg4);
-  if (x4 == (double)-1 && PyErr_Occurred())
-    return NULL;
-
-  x5 = (double)_cffi_to_c_double(arg5);
-  if (x5 == (double)-1 && PyErr_Occurred())
-    return NULL;
-
-  x6 = (double)_cffi_to_c_double(arg6);
-  if (x6 == (double)-1 && PyErr_Occurred())
-    return NULL;
-
-  x7 = (double)_cffi_to_c_double(arg7);
-  if (x7 == (double)-1 && PyErr_Occurred())
-    return NULL;
-
-  x8 = (double)_cffi_to_c_double(arg8);
-  if (x8 == (double)-1 && PyErr_Occurred())
-    return NULL;
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { result = get_xil_LL(x0, x1, x2, x3, x4, x5, x6, x7, x8); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  pyresult = _cffi_from_c_pointer((char *)result, _cffi_type(15));
-  return pyresult;
-}
-#else
-#  define _cffi_f_get_xil_LL _cffi_d_get_xil_LL
-#endif
-
 static void _cffi_d_init_prediction(char * x0)
 {
   init_prediction(x0);
@@ -940,10 +847,10 @@ _cffi_f_init_prediction(PyObject *self, PyObject *arg0)
   struct _cffi_freeme_s *large_args_free = NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(38), arg0, (char **)&x0);
+      _cffi_type(27), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (char *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(38), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(27), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -964,11 +871,10 @@ _cffi_f_init_prediction(PyObject *self, PyObject *arg0)
 #endif
 
 static const struct _cffi_global_s _cffi_globals[] = {
-  { "free_prediction", (void *)_cffi_f_free_prediction, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 40), (void *)_cffi_d_free_prediction },
-  { "get_prediction", (void *)_cffi_f_get_prediction, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 23), (void *)_cffi_d_get_prediction },
-  { "get_prediction_LL", (void *)_cffi_f_get_prediction_LL, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 11), (void *)_cffi_d_get_prediction_LL },
-  { "get_xil_LL", (void *)_cffi_f_get_xil_LL, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_get_xil_LL },
-  { "init_prediction", (void *)_cffi_f_init_prediction, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 37), (void *)_cffi_d_init_prediction },
+  { "free_prediction", (void *)_cffi_f_free_prediction, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 29), (void *)_cffi_d_free_prediction },
+  { "get_prediction", (void *)_cffi_f_get_prediction, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 12), (void *)_cffi_d_get_prediction },
+  { "get_prediction_LL", (void *)_cffi_f_get_prediction_LL, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_get_prediction_LL },
+  { "init_prediction", (void *)_cffi_f_init_prediction, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 26), (void *)_cffi_d_init_prediction },
 };
 
 static const struct _cffi_type_context_s _cffi_type_context = {
@@ -978,12 +884,12 @@ static const struct _cffi_type_context_s _cffi_type_context = {
   NULL,  /* no struct_unions */
   NULL,  /* no enums */
   NULL,  /* no typenames */
-  5,  /* num_globals */
+  4,  /* num_globals */
   0,  /* num_struct_unions */
   0,  /* num_enums */
   0,  /* num_typenames */
   NULL,  /* no includes */
-  44,  /* num_types */
+  33,  /* num_types */
   0,  /* flags */
 };
 

@@ -262,35 +262,6 @@ int get_prediction_LL(double in_s_min, double in_s_max, int in_n_rsd, double *ou
   return 0;
 }
 
-double *get_xil_LL(double in_s_min, double in_s_max, int in_n_rsd,
-		   double in_f, double in_b1, double in_b2, double in_sigv, double in_alpha_par, double in_alpha_per)
-{
-  int i;
-  double xi0[in_n_rsd+1],xi2[in_n_rsd+1],xi4[in_n_rsd+1];
-  double par[8];
-  double *out = malloc(sizeof(double)*3*in_n_rsd);
-
-  par[0]=in_f;
-  par[1]=in_b1;
-  par[2]=in_b2;
-  par[3]=-2.0/7.0*(in_b1-1.0);
-  par[4]=11.0/42.0*(in_b1-1.0);
-  par[5]=in_sigv;
-  par[6]=in_alpha_par;
-  par[7]=in_alpha_per;
-
-  comp_RSD(par,in_s_min,in_s_max,in_n_rsd,xi0,xi2,xi4);
-
-  #pragma omp parallel for 
-  for (i=1;i<=3*in_n_rsd;i++) {
-    if (i<=in_n_rsd) out[i-1]=xi0[i];
-    else if (i<=2*in_n_rsd) out[i-1]=xi2[i-in_n_rsd];
-    else out[i-1]=xi4[i-2*in_n_rsd];
-  }
-  
-  return out;
-}
-
 int GetNumLines(char file[])
 {
   FILE *fic;

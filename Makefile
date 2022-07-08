@@ -1,7 +1,7 @@
 # Makefile
 
 CC = gcc
-CF = -O3 -fpic -Wall -pedantic -ffast-math -std=gnu11
+CF = -O3 -fpic -Wall -pedantic
 CL = -lm -lgsl -lgslcblas -lfftw3 -fopenmp
 
 objects1 = fftlog_PT biasing halofit TNSCorrections RealPower
