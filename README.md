@@ -10,8 +10,8 @@ redshift-space two-point correlation function. A python wrapper is also provided
 
 ## Requirements
 
-The `gsl`, `fftw3`, `openmp` libraries should to be installed. For the python wrapper,
-cffi and numpy modules should be installed.
+The `gsl`, `fftw3`, `openmp` libraries should to be installed. For the python 
+wrapper, `cffi` and `numpy` modules should be installed.
 
 
 ## Compilation
@@ -28,25 +28,27 @@ Individual codes are compiled as:
 
 The `RealPower` and `TNS` executables can be ran from the command line.
 `RealPower` computes the ingredients of the TNS model (it has several options),
-`TNS` computes the prediction of TNS model, and `libTNS.so` is a library that 
+`TNS` computes the prediction of the TNS model for the monopole, quadrupole, 
+and hexadecapole of the correlation function, and `libTNS.so` is a library that 
 can be used externally in other C codes or wrappers.  
 
 
 ## Python wrapper
 
-The model can be used as a python module calling the `libTNS` library. The TNS python module
-needs first to be built with `cffi`. For this:
+The model can be used as a python module calling the `libTNS` library. The TNS 
+python module needs first to be built with `cffi`. For this:
 > cd pymodule
 
 > python build.py
 
-The wrapper class is then in `wrapperTNS.py` and can be tested using:
+The wrapper class is in `wrapperTNS.py` and can be tested by running:
 
 > python wrapperTNS.py
 
-In practice, for the python wrapper to work in other python script, one needs to have
-`libTNS.so` and `pyTNS.cpython-*.so` files in the same directory.
+For the python wrapper to work in other python scripts, `libTNS.so` and 
+`pyTNS.cpython-*.so` files need to be put in the same directory.
 
 
 ## Contact
+
 For any question, please send an email to sylvain.delatorre@lam.fr.
