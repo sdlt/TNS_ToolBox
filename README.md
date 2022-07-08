@@ -7,11 +7,14 @@ using Halofit with Bel et al. 2019 prescriptions for P_dt and P_tt. The final
 products are the monopole, quadrupole, and hexadecapole moments of the
 redshift-space two-point correlation function. A python wrapper is provided.
 
-*** Requirements ***
 
-The gsl, fftw3, openmp libraries should to be installed first.
+## Requirements
 
-*** Compilation *** 
+The `gsl`, `fftw3`, `openmp` libraries should to be installed. For the python wrapper,
+cffi and numpy modules should be installed.
+
+
+## Compilation
 
 Compilation is done with
 > make all
@@ -23,14 +26,15 @@ Individual codes are compiled as:
 
 > make libtns
 
-The 'RealPower' and 'TNS' executables can be ran from the command line.
-'RealPower' computes the ingredients of the TNS model (it has several options),
-'TNS' computes the prediction of TNS model, and 'libTNS.so' is a library that 
+The `RealPower` and `TNS` executables can be ran from the command line.
+`RealPower` computes the ingredients of the TNS model (it has several options),
+`TNS` computes the prediction of TNS model, and `libTNS.so` is a library that 
 can be used externally in other C codes or wrappers.  
 
-*** Python wrapper ***
 
-The model can be used as a python module calling the libTNS library. The python module
+## Python wrapper
+
+The model can be used as a python module calling the `libTNS` library. The python module
 needs first to be created with cffi. For this:
 > cd pymodule
 
@@ -43,5 +47,6 @@ The wrapper class is in wrapperTNS.py and can be tested using:
 In practice, for the python wrapper to work in other python script, one needs to have
 libTNS.so and pyTNS.cpython-*.so files in the same directory.
 
-*** Contact ***
+
+## Contact
 For any question, please send an email to sylvain.delatorre@lam.fr.
