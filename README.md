@@ -5,7 +5,7 @@ renormalised 1-loop bias model as used in Bautista, Paviot et al. 2020. It
 offers the possibility of providing real-space P_dd, P_dt, P_tt as input or
 using Halofit with Bel et al. 2019 prescriptions for P_dt and P_tt. The final
 products are the monopole, quadrupole, and hexadecapole moments of the
-redshift-space two-point correlation function. A python wrapper is provided.
+redshift-space two-point correlation function. A python wrapper is also provided.
 
 
 ## Requirements
@@ -34,18 +34,18 @@ can be used externally in other C codes or wrappers.
 
 ## Python wrapper
 
-The model can be used as a python module calling the `libTNS` library. The python module
-needs first to be created with cffi. For this:
+The model can be used as a python module calling the `libTNS` library. The TNS python module
+needs first to be built with `cffi`. For this:
 > cd pymodule
 
 > python build.py
 
-The wrapper class is in wrapperTNS.py and can be tested using:
+The wrapper class is then in `wrapperTNS.py` and can be tested using:
 
 > python wrapperTNS.py
 
 In practice, for the python wrapper to work in other python script, one needs to have
-libTNS.so and pyTNS.cpython-*.so files in the same directory.
+`libTNS.so` and `pyTNS.cpython-*.so` files in the same directory.
 
 
 ## Contact
