@@ -316,7 +316,7 @@ int main(int argc, char *argv[])
   double hp[5];
 
   if (argc<=3) {
-    fprintf(stderr, "Usage: %s [-m] [Pk_file]\n", argv[0]);
+    fprintf(stderr, "Usage: %s [-m HaloBel|PddBel|AllP] [Pk_file ...]\n", argv[0]);
     exit(1);
   }
   
